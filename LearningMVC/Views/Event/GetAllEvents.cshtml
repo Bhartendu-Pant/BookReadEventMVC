@@ -1,0 +1,32 @@
+﻿@model IEnumerable<LearningMVC.Models.EventModel>
+@{
+    Layout="_Layout";
+   
+
+}
+
+<div class="container">
+    <h3 class="display-1 align-content-center">All Events</h3>
+    <div class="details">
+        @{ int i = 1;}
+        @foreach (var evnt in Model)
+        {
+            <h4>Event @i</h4><br />
+                             <div class="display">
+                                 <!-- <div> <label class="display-4">id : @evnt.id</label></div> -->
+
+                                 <div> <label class="display-4">Title : @evnt.Title</label></div>
+                                 <div><label class="display-4">Date: @evnt.Date</label></div>
+                                 <div><label class="display-4">Location: @evnt.Location</label></div>
+
+                                 <div> <label class="display-4">Duration in hours: @evnt.DurationInHours</label></div>
+                                 <div> <label class="display-4">Description: @evnt.Description</label></div>
+                                 <div><label class="display-4">Other Details: @evnt.OtherDetails</label></div>
+                                 @{i++;}
+                             </div>
+          
+
+        }
+    </div>
+</div>
+

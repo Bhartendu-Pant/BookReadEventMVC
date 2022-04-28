@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewData["Title"] = "CreateEvent";
+}
+
+@model EventModel
+
+<div class="container">
+
+    <h3 class="display-2">Create New Event</h3>
+  
+    @if (ViewBag.IsSuccess)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Congratulations</strong> Event has been created successfully.<br />
+            click here for <a asp-controller="Event" asp-action="GetEvent" asp-route-id="@ViewBag.EventId">details</a>.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    <form method="post">
+
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control" />
+
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="Date"></label>
+            <input asp-for="Date" class="form-control" />
+
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="Location"></label>
+            <input asp-for="Location" class="form-control" />
+
+        </div>
+
+
+       
+
+
+        <div class="form-group">
+            <label asp-for="DurationInHours"></label>
+            <input asp-for="DurationInHours" class="form-control" />
+
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="OtherDetails"></label>
+            <textarea asp-for="OtherDetails" class="form-control"></textarea>
+
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label asp-for="InviteOthers"></label>
+            <input asp-for="InviteOthers" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Create Event" class="btn btn-primary" />
+        </div>
+
+
+
+
+    </form>
+</div>
+
